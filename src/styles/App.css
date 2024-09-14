@@ -1,0 +1,311 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header Styles */
+.App-header {
+  background-color: transparent;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.App-header .logo {
+  margin-right: 50px;
+  font-size: 2rem;
+  color: #f7e018;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.App-header nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header nav ul li {
+  margin: 0 20px;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.App-header nav ul li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f7e018;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.App-header nav ul li:hover::after {
+  width: 100%;
+}
+
+.App-header nav ul li:hover {
+  color: #f7e018;
+}
+
+.wallet-connect {
+  margin-left: auto;
+  margin-right: 100px;
+  font-weight: 500;
+}
+
+.wallet-connected {
+  color: #4CAF50;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.wallet-connect button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.disconnect-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.wallet-connect button:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+.disconnect-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-3px);
+}
+
+/* Responsiveness for Header */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 10px 20px;
+  }
+
+  .App-header nav ul li {
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+
+  .wallet-connect {
+    margin-right: 10px;
+  }
+}
+
+/* Hero Section Styles */
+.hero-section {
+  padding: 180px 0 100px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #00ff99;
+  text-shadow: 2px 2px 8px #000;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #b3b3b3;
+  font-weight: 300;
+}
+
+.get-started-btn {
+  padding: 15px 30px;
+  background-color: #ff33cc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 51, 204, 0.7);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #ff66ff;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  .get-started-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Game Display */
+.game-display {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  width: 350px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.5);
+}
+
+.game-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.game-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00ff99;
+  font-weight: 600;
+}
+
+.game-card p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #b3b3b3;
+  font-weight: 300;
+}
+
+.play-now-btn {
+  padding: 12px 25px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.play-now-btn:hover {
+  background-color: #0b7dda;
+  transform: translateY(-5px);
+}
+
+/* Footer Styles */
+footer {
+  margin-top: 80px;
+  padding: 40px;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #666;
+}
+
+footer p a {
+  color: #f7e018;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  color: #00ff99;
+}
+
+footer p:hover {
+  color: #00ff99;
+}
